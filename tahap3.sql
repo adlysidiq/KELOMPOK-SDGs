@@ -1,0 +1,1 @@
+SELECT * FROM `rekap_jumlah_setor`
