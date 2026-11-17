@@ -2,10 +2,6 @@
 -- SCRIPT PENGUJIAN PENYIMPANAN DATA JSON
 -- Tabel utama : setoran (kolom detail_tambahan bertipe JSON)
 -- =====================================================================
--- Prasyarat: tabel pengguna sudah berisi id_pengguna 1, 4, dan 5,
--- dan kolom detail_tambahan sudah ada di tabel setoran:
--- ALTER TABLE setoran ADD COLUMN detail_tambahan JSON NULL;
-
 
 -- =====================================================================
 -- 1. PERSIAPAN DATA (bukan pengujian JSON)
@@ -114,7 +110,6 @@ WHERE id_setoran = 105;
 
 -- =====================================================================
 -- 5. PENGUJIAN: MENAMBAHKAN ATRIBUT JSON (UPDATE dengan JSON_SET)
--- Atribut baru (merk_botol) ditambahkan tanpa mengubah struktur tabel.
 -- =====================================================================
 
 UPDATE setoran
@@ -143,7 +138,6 @@ WHERE id_setoran = 105;
 
 -- =====================================================================
 -- 7. PENGUJIAN: MEMFILTER DATA BERDASARKAN ATRIBUT JSON (WHERE)
--- JSON_UNQUOTE dipakai agar nilai dibandingkan tanpa tanda kutip.
 -- =====================================================================
 
 -- 7a. Setoran dengan metode_setor = 'dijemput'
